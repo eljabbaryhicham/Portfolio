@@ -644,73 +644,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- iziModal JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"></script>
-<script>
-  $(document).ready(function() {
-    // Function to update the height of the work section
-    function updateWorkSectionHeight() {
-      var totalHeight = 0;
-      // Loop through each item to calculate total height
-      $('.item').each(function() {
-        totalHeight += $(this).outerHeight(true); // Include padding and margin
+    <script>
+      $(document).ready(function() {
+        // Initialize Plyr player
+        const players = Array.from(document.querySelectorAll('#work video')).map(player => new Plyr(player));
+        // Load More button functionality
+        $('#loadMoreBtn').on('click', function() {
+          $('.item.additional').slideDown();
+          $(this).hide();
+        });
+        $(".modais").iziModal({
+          history: false,
+          iframe: true,
+          fullscreen: true,
+          headerColor: '#000000',
+          group: 'group1',
+          loop: true
+        });
       });
-      // Set the height of the work section
-      $('#work_section').css('height', totalHeight);
-    }
 
-    // Call the function initially when the document is ready
-    updateWorkSectionHeight();
+      function filterItems(filter) {
+        // Show all items initially
+        $('.item').show();
+        // Hide items based on the filter
+        if (filter === 'videos') {
+          $('.item').not('.video-item').hide();
+        } else if (filter === 'images') {
+          $('.item').not('.image-item').hide();
+        }
+        // Hide Load More button when any filter is active
+        $('#loadMoreBtn').hide();
+      }
 
-    // Call the function whenever the window is resized
-    $(window).resize(function() {
-      updateWorkSectionHeight();
-    });
+      function toggleFilters() {
+        $('#filterDropdown').toggle();
+        $('#filterButtons').toggle(); // Toggle visibility of filter buttons
+      }
+      // Close the dropdown menu when clicking outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('#toggleFilters')) {
+          $('#filterDropdown').hide();
+          $('#filterButtons').hide(); // Hide filter buttons when clicking outside the dropdown
+        }
+      }
+    </script>
 
-    // Load More button functionality
-    $('#loadMoreBtn').on('click', function() {
-      $('.item.additional').slideDown();
-      // Call the function to update the height after new items are shown
-      updateWorkSectionHeight();
-      $(this).hide();
-    });
-
-    $(".modais").iziModal({
-      history: false,
-      iframe: true,
-      fullscreen: true,
-      headerColor: '#000000',
-      group: 'group1',
-      loop: true
-    });
-  });
-
-  function filterItems(filter) {
-    // Show all items initially
-    $('.item').show();
-    // Hide items based on the filter
-    if (filter === 'videos') {
-      $('.item').not('.video-item').hide();
-    } else if (filter === 'images') {
-      $('.item').not('.image-item').hide();
-    }
-    // Hide Load More button when any filter is active
-    $('#loadMoreBtn').hide();
-    // Update the height of the work section after filtering
-    updateWorkSectionHeight();
-  }
-
-  function toggleFilters() {
-    $('#filterDropdown').toggle();
-    $('#filterButtons').toggle(); // Toggle visibility of filter buttons
-  }
-  // Close the dropdown menu when clicking outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('#toggleFilters')) {
-      $('#filterDropdown').hide();
-      $('#filterButtons').hide(); // Hide filter buttons when clicking outside the dropdown
-    }
-  }
+<script type="text/javascript">
+    
 </script>
-
 
 
   </body>
