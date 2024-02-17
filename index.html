@@ -1,492 +1,717 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Motion Designer & 3D Animator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css"> <!-- Include Plyr CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css"> <!-- Include iziModal CSS -->
-    
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
-
-
-
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+    <!-- Include Plyr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css">
+    <!-- Include iziModal CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
     <style>
-        /* CSS Styles */
-       
+      /* CSS Styles */
+      /* Your existing CSS styles */
+      /* CSS Styles */
+      /* Body Styles */
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #06071c, #5abac0);
+        /* Dark blue to light blue gradient */
+      }
 
-/* Body Styles */
-body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-      margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #06071c, #5abac0); /* Dark blue to light blue gradient */
-}
+      /* Header Styles */
+      header {
+        font-family: "Protest Guerrilla", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: #06071c;
+        /* Dark blue color */
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
+      h1 {
+        color: #fff;
+        font-size: 100px;
+        font-family: "Protest Guerrilla", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
 
-/* Header Styles */
-header {
-     font-family: "Protest Guerrilla", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-    background-color: #06071c; /* Dark blue color */
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+      .logo {
+        font-size: 24px;
+      }
 
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-h1 {
-    color: #fff;
-    font-size: 100px;
-    font-family: "Protest Guerrilla", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+      nav ul li {
+        display: inline;
+        margin-left: 20px;
+      }
 
-        .logo {
-            font-size: 24px;
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* Main Section Styles */
+      main {}
+
+      .full-screen {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        /* Ensure position relative for absolute positioning of video */
+      }
+
+      .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        /* Move the video behind the content */
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      /* CSS Styles */
+      .full-screen {
+        position: relative;
+      }
+
+      .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent black */
+        z-index: 0;
+        /* Ensure the overlay is behind the content */
+        pointer-events: none;
+        /* Allow clicks to go through the overlay to the video */
+      }
+
+      .content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Button Styles */
+      .btn {
+        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+        /* Dark red to dark blue gradient */
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        /* Change font for consistency */
+        font-size: 16px;
+        font-weight: 500;
+        height: 4rem;
+        padding: 0 1.6rem;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        padding: 20px;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+      }
+
+      /* Footer Styles */
+      footer {
+        font-family: "Fredoka", sans-serif;
+        font-optical-sizing: auto;
+        font-weight:
+          <weight>;
+        font-style: normal;
+        font-variation-settings:
+          "wdth"100;
+        background-color: #06071c;
+        /* Dark blue color */
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Social Media Icons */
+      .social-media a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+
+      /* Work Section Styles */
+      #work {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        /* Ensure content doesn't overflow */
+      }
+
+      .item video,
+      .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure videos and images fit within the container */
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Thumbnail Styles */
+      .thumbnail {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.1);
+      }
+
+      /* Modal Content Styles */
+      .iziModal-content {
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Modal Image Styles */
+      .iziModal-content img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        /* Ensure the image fits within the modal */
+      }
+
+      .plyr {
+        width: 100% !important;
+      }
+
+      #loadMoreContainer {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #loadMoreBtn {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        height: 4rem;
+        padding: 0 1.6rem;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      #loadMoreBtn:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+      }
+
+      /* CSS Styles */
+      /* Other styles remain unchanged */
+      /* Style for the filter dropdown */
+      /* Styles for the filter dropdown */
+      #filterMenu {
+        position: relative;
+        display: inline-block;
+      }
+
+      #filterDropdown {
+        display: none;
+        z-index: 1;
+      }
+
+      #filterDropdown button {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      #filterDropdown button:hover {
+        background-color: #f1f1f1;
+      }
+
+      #toggleFilters {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      #toggleFilters:hover {
+        background-color: #45a049;
+      }
+
+      button#toggleFilters {
+        margin: 20px;
+      }
+
+      a[data-izimodal-open] {
+        padding: 0px !important;
+        border-radius: 3px;
+        border: 0;
+        background: none !important;
+        font-size: 14px;
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+        cursor: pointer;
+      }
+
+      /* Add fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        to {
+          opacity: 1;
         }
+      }
 
-        nav ul li {
-            display: inline;
-            margin-left: 20px;
-        }
+      /* Apply fade-in animation to items */
+      .item {
+        animation: fadeIn 1s ease-in-out;
+      }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
+      /* Apply button styles to filter menu buttons */
+      #toggleFilters,
+      #filterDropdown button {
+        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
 
-        /* Main Section Styles */
-        main {
-        }
+      /* Hover effect for filter menu buttons */
+      #toggleFilters:hover,
+      #filterDropdown button:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+      }
 
-        .full-screen {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            position: relative; /* Ensure position relative for absolute positioning of video */
-        }
+      /* CSS Styles */
+      /* Other styles remain unchanged */
+      /* Center the filter menu container */
+      #filterContainer {
+        text-align: center;
+      }
 
-        .background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Move the video behind the content */
-        }
+      /* Align the buttons horizontally */
+      #filterButtons {
+        display: flex;
+        justify-content: center;
+      }
 
-        .content {
-            text-align: center;
-        }
+      #filterButtons button {
+        margin: 0 10px;
+        /* Adjust margin for spacing */
+        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
 
-        /* CSS Styles */
-.full-screen {
-    position: relative;
-}
+      /* Align the buttons horizontally */
+      #filterDropdown {
+        display: flex;
+        justify-content: center;
+      }
 
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+      #filterDropdown button {
+        margin: 0 10px;
+        /* Adjust margin for spacing */
+        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
 
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 0; /* Ensure the overlay is behind the content */
-    pointer-events: none; /* Allow clicks to go through the overlay to the video */
-}
+      #filterDropdown button:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+      }
 
-.content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
+      /* Contact Section Styles */
+      #contact {
+        background-color: #f2f2f2;
+        padding: 50px 0;
+        text-align: center;
+      }
 
-/* Button Styles */
-.btn {
-    background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%); /* Dark red to dark blue gradient */
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Arial, sans-serif; /* Change font for consistency */
-    font-size: 16px;
-    font-weight: 500;
-    height: 4rem;
-    padding: 0 1.6rem;
-    text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-    transition: all .5s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    padding: 20px;
-    text-decoration: none;
-}
+      /* About Section Styles */
+      #about {
+        background-color: #fff;
+        padding: 50px 0;
+        text-align: center;
+      }
 
-.btn:hover {
-    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-    transition-duration: .1s;
-}
+      #about h2 {
+        color: #333;
+      }
 
-
-
-/* Footer Styles */
-footer {
-      font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-    background-color: #06071c; /* Dark blue color */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-        /* Social Media Icons */
-        .social-media a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-            font-size: 24px;
-        }
-
-        /* Work Section Styles */
-        #work {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 20px;
-            color: #fff;
-            text-align: center;
-            padding: 20px; /* Add padding back if necessary */
-            /* max-height: 100vh; */ /* Remove the max-height property */
-        }
-
-        .item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Ensure content doesn't overflow */
-        }
-
-        .item video,
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensure videos and images fit within the container */
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Thumbnail Styles */
-        .thumbnail {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .thumbnail:hover {
-            transform: scale(1.1);
-        }
-
-        /* Modal Content Styles */
-        .iziModal-content {
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Modal Image Styles */
-        .iziModal-content img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensure the image fits within the modal */
-        }
-
-        .plyr {
-            width: 100% !important;
-        }
-
-        #loadMoreContainer {
-            margin: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        #loadMoreBtn {
-            background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-            border-radius: 8px;
-            border-style: none;
-            box-sizing: border-box;
-            color: #FFFFFF;
-            cursor: pointer;
-            font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            height: 4rem;
-            padding: 0 1.6rem;
-            text-align: center;
-            text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-            transition: all .5s;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-        }
-
-        #loadMoreBtn:hover {
-            box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-            transition-duration: .1s;
-        }
+      #about p {
+        color: #666;
+      }
     </style>
-
-    <style>
-    /* CSS Styles */
-    /* Other styles remain unchanged */
-
-
-
-
-
-
-
-
-
-
-a[data-izimodal-open] {
-    padding: 0px !important;
-    border-radius: 3px;
-    border: 0;
-    background: none !important;
-    font-size: 14px;
-    border-top: 0px !important;
-    border-bottom: 0px !important;
-    cursor: pointer;
-}
-     
-</style>
-</head>
-<body>
-
-<!-- Header Section -->
-<header>
-    <div class="logo">Your Logo</div>
-    <nav>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Your Logo</div>
+      <nav>
         <ul>
-            <li><a href="#work">WORK</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+          <li>
+            <a href="#work_section">WORK</a>
+          </li>
+          <li>
+            <a href="#about">ABOUT</a>
+          </li>
+          <li>
+            <a href="#contact">CONTACT</a>
+          </li>
         </ul>
-    </nav>
-</header>
-
-<!-- Main Section -->
-<main>
-       <!-- Background Image -->
-    <div class="background-image"></div>
-    <!-- First Section (Home) -->
-    <section id="home" class="full-screen">
+      </nav>
+    </header>
+    <!-- Main Section -->
+    <main>
+      <!-- First Section (Home) -->
+      <section id="home" class="full-screen">
         <!-- Video Background -->
         <video autoplay muted loop class="background-video">
-        <source src="https://carbon-media.accelerator.net/0000000m1Yc/3xCmYpbBtGYejYRY02UIfq;video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Video Overlay -->
-    <div class="video-overlay"></div>
-
+          <source src="https://carbon-media.accelerator.net/0000000m1Yc/3xCmYpbBtGYejYRY02UIfq;video.mp4" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+        <!-- Video Overlay -->
+        <div class="video-overlay"></div>
         <div class="content">
-            <h1>Welcome to My Portfolio</h1>
-            <a href="#work" class="btn">View My Work</a>
+          <h1>JABBARY ART</h1>
+          <a href="#work_section" class="btn">View My Work</a>
         </div>
-    </section>
-
-    <!-- Second Section (Work) -->
-    <section id="work" class="buttons">
-        <!-- Initial 9 items -->
-
-
-
-         <div class="item">
-<div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://bnmax4.blogspot.com/"></div>
-
+      </section>
+      <!-- Second Section (Work) -->
+      <section id="work_section">
+        <!-- Filter Button -->
+        <div id="filterContainer" class="text-center">
+          <!-- Added container -->
+          <div id="filterMenu">
+            <button id="toggleFilters" onclick="toggleFilters()">Filter <i class="fas fa-caret-down"></i>
+            </button>
+            <div id="filterDropdown" style="display: none;">
+              <!-- Added dropdown container -->
+              <button onclick="filterItems('all')">All</button>
+              <button onclick="filterItems('videos')">Videos</button>
+              <button onclick="filterItems('images')">Images</button>
+            </div>
+          </div>
+        </div>
+        <div id="work" class="work-container">
+          <!-- Items -->
+          <!-- Your existing items here -->
+          <!-- Initial 9 items -->
+          <div class="item video-item">
+            <div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://bnmax4.blogspot.com/"></div>
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-open="#modal-1">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-
-        </div>
-         <div class="item">
-<div id="modal-2" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
-
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item image-item">
+            <div id="modal-2" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-open="#modal-2">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-
-        </div>
-         <div class="item">
-<div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
-
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
+            <div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-open="#modal-1">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-
-        </div>
-
-        <div class="item">
-<div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
-
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
+            <div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png"></div>
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-open="#modal-1">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-
-        </div>
-
-        <div class="item">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-        <div class="item">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-        <div class="item">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
             <video controls crossorigin preload="auto">
-                <source src="sample-video4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+              <source src="sample-video4.mp4" type="video/mp4"> Your browser does not support the video tag.
             </video>
-        </div>
-        <div class="item">
+          </div>
+          <div class="item">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-        <div class="item">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-
-        <!-- Additional videos and images initially hidden -->
-        <div class="item additional" style="display: none;">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <!-- Additional videos and images initially hidden -->
+          <div class="item additional" style="display: none;">
             <video controls crossorigin preload="auto">
-                <source src="sample-video5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+              <source src="sample-video5.mp4" type="video/mp4"> Your browser does not support the video tag.
             </video>
-        </div>
-        <div class="item additional" style="display: none;">
+          </div>
+          <div class="item additional" style="display: none;">
             <video controls crossorigin preload="auto">
-                <source src="sample-video6.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+              <source src="sample-video6.mp4" type="video/mp4"> Your browser does not support the video tag.
             </video>
-        </div>
-        <div class="item additional" style="display: none;">
+          </div>
+          <div class="item additional" style="display: none;">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-        <div class="item additional" style="display: none;">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item additional" style="display: none;">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
-        </div>
-        <div class="item additional" style="display: none;">
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
+          <div class="item additional" style="display: none;">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
-            <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image" > </a>
+              <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
+            </a>
+          </div>
         </div>
-
-        
-    </section>
-
-<!-- Load More button -->
+        <!-- Load More button -->
         <div id="loadMoreContainer" style="display: flex; justify-content: center;">
-            <button id="loadMoreBtn">Load More</button>
+          <button id="loadMoreBtn">Load More</button>
         </div>
-
-</main>
-
-<!-- Footer Section -->
-<footer>
-    <div class="social-media">
+      </section>
+      <!-- About Section -->
+      <section id="about">
+        <div class="content">
+          <h2>About Me</h2>
+          <p>Here you can provide information about yourself, your skills, experience, and anything else you want to share with your visitors.</p>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="content">
+          <h2>Contact Me</h2>
+          <p>Feel free to get in touch with me via the form below.</p>
+          <!-- Add your contact form here -->
+        </div>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer>
+      <div class="social-media">
         <!-- Social media icons -->
-        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-    </div>
-    <div class="copyright">
-        &copy; 2024 Your Name
-    </div>
-</footer>
-
-<!-- Plyr JS -->
-<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- iziModal JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"></script>
+        <a href="#" class="social-icon">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="copyright"> &copy; 2024 Your Name </div>
+    </footer>
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- iziModal JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"></script>
 <script>
-    $(document).ready(function(){
-        // Initialize Plyr player
-        const players = Array.from(document.querySelectorAll('#work video')).map(player => new Plyr(player));
+  $(document).ready(function() {
+    // Function to update the height of the work section
+    function updateWorkSectionHeight() {
+      var totalHeight = 0;
+      // Loop through each item to calculate total height
+      $('.item').each(function() {
+        totalHeight += $(this).outerHeight(true); // Include padding and margin
+      });
+      // Set the height of the work section
+      $('#work_section').css('height', totalHeight);
+    }
 
-        // Load More button functionality
-        $('#loadMoreBtn').on('click', function() {
-            $('.item.additional').slideDown();
-            $(this).hide();
-        });
+    // Call the function initially when the document is ready
+    updateWorkSectionHeight();
 
-      $(function(){
-  
-  $(".modais").iziModal({
-    history: false,
-    iframe : true,
-    fullscreen: true,
-    headerColor: '#000000',
-    group: 'group1',
-    loop: true
-  });
-  
-})
+    // Call the function whenever the window is resized
+    $(window).resize(function() {
+      updateWorkSectionHeight();
     });
+
+    // Load More button functionality
+    $('#loadMoreBtn').on('click', function() {
+      $('.item.additional').slideDown();
+      // Call the function to update the height after new items are shown
+      updateWorkSectionHeight();
+      $(this).hide();
+    });
+
+    $(".modais").iziModal({
+      history: false,
+      iframe: true,
+      fullscreen: true,
+      headerColor: '#000000',
+      group: 'group1',
+      loop: true
+    });
+  });
+
+  function filterItems(filter) {
+    // Show all items initially
+    $('.item').show();
+    // Hide items based on the filter
+    if (filter === 'videos') {
+      $('.item').not('.video-item').hide();
+    } else if (filter === 'images') {
+      $('.item').not('.image-item').hide();
+    }
+    // Hide Load More button when any filter is active
+    $('#loadMoreBtn').hide();
+    // Update the height of the work section after filtering
+    updateWorkSectionHeight();
+  }
+
+  function toggleFilters() {
+    $('#filterDropdown').toggle();
+    $('#filterButtons').toggle(); // Toggle visibility of filter buttons
+  }
+  // Close the dropdown menu when clicking outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('#toggleFilters')) {
+      $('#filterDropdown').hide();
+      $('#filterButtons').hide(); // Hide filter buttons when clicking outside the dropdown
+    }
+  }
 </script>
 
-<div id="modal-iframe" class="iziModal-header"></div>
 
-</body>
+
+  </body>
 </html>
