@@ -23,7 +23,9 @@
         font-style: normal;
         margin: 0;
         padding: 0;
-        background: linear-gradient(to bottom right, #06071c, #5abac0);
+            min-height: 100vh;
+
+        background: linear-gradient(to bottom right, #e43725, #e43725);
         /* Dark blue to light blue gradient */
       }
 
@@ -32,13 +34,14 @@
         font-family: "Protest Guerrilla", sans-serif;
         font-weight: 400;
         font-style: normal;
-        background-color: #06071c;
+        background-color: #e74c3c;
         /* Dark blue color */
         color: #fff;
         padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 9999;
       }
 
       h1 {
@@ -70,17 +73,30 @@
       }
 
       /* Main Section Styles */
-      main {}
+      main {
+        min-height: 85vh;
+      }
 
       .full-screen {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
+        min-height: 85vh;
+    display: flex;
+            justify-content: center;
         align-items: center;
         flex-direction: column;
         position: relative;
         /* Ensure position relative for absolute positioning of video */
       }
+    
+    .full-screen_work {
+        min-height: 85vh;
+    display: inline-table;
+            justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        /* Ensure position relative for absolute positioning of video */
+      }
+
 
       .background-video {
         position: absolute;
@@ -179,6 +195,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+                z-index: 9999;
+
       }
 
       /* Social Media Icons */
@@ -190,22 +208,21 @@
       }
 
       /* Work Section Styles */
-      #work {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 20px;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-      }
+      #work_sec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 250px;
+}
 
       .item {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -262,30 +279,36 @@
         justify-content: center;
       }
 
-      #loadMoreBtn {
-        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-        border-radius: 8px;
-        border-style: none;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        height: 4rem;
-        padding: 0 1.6rem;
-        text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-        transition: all .5s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
+      #loadMoreContainer {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-      #loadMoreBtn:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-        transition-duration: .1s;
-      }
+#loadMoreBtn {
+  background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 16px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#loadMoreBtn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
 
       /* CSS Styles */
       /* Other styles remain unchanged */
@@ -451,16 +474,12 @@
 
       /* Contact Section Styles */
       #contact {
-        background-color: #f2f2f2;
-        padding: 50px 0;
-        text-align: center;
+            height: 100%;
       }
 
       /* About Section Styles */
       #about {
-        background-color: #fff;
-        padding: 50px 0;
-        text-align: center;
+            height: 100%;
       }
 
       #about h2 {
@@ -470,25 +489,46 @@
       #about p {
         color: #666;
       }
+
+
+
+
     </style>
+
+
+<style>
+    /* Your existing CSS styles */
+    /* Add styles for the preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      z-index: 9999; /* Ensure the preloader is above other elements */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+
+
   </head>
   <body>
-    <!-- Header Section -->
-    <header>
+        <header>
+      <!-- Header Section -->
       <div class="logo">Your Logo</div>
-      <nav>
+   <nav>
         <ul>
-          <li>
-            <a href="#work_section">WORK</a>
-          </li>
-          <li>
-            <a href="#about">ABOUT</a>
-          </li>
-          <li>
-            <a href="#contact">CONTACT</a>
-          </li>
+            <!-- Update onclick functions to call scrollToSection -->
+            <li><button class="btn" onclick="showSection('home')">HOME</button></li>
+            <li><button class="btn" onclick="showSection('work')">WORK</button></li>
+            <li><button class="btn" onclick="showSection('about')">ABOUT</button></li>
+            <li><button class="btn" onclick="showSection('contact')">CONTACT</button></li>
         </ul>
-      </nav>
+    </nav>
     </header>
     <!-- Main Section -->
     <main>
@@ -501,12 +541,15 @@
         <!-- Video Overlay -->
         <div class="video-overlay"></div>
         <div class="content">
+           
+
           <h1>JABBARY ART</h1>
-          <a href="#work_section" class="btn">View My Work</a>
+<button class="btn" onclick="showSection('work')">WORK</button>
         </div>
       </section>
       <!-- Second Section (Work) -->
-      <section id="work_section">
+            <section id="work" class="full-screen_work" style="display: none;">
+
         <!-- Filter Button -->
         <div id="filterContainer" class="text-center">
           <!-- Added container -->
@@ -521,7 +564,7 @@
             </div>
           </div>
         </div>
-        <div id="work" class="work-container">
+        <div id="work_sec" class="work-container">
           <!-- Items -->
           <!-- Your existing items here -->
           <!-- Initial 9 items -->
@@ -602,22 +645,26 @@
           </div>
         </div>
         <!-- Load More button -->
-        <div id="loadMoreContainer" style="display: flex; justify-content: center;">
-          <button id="loadMoreBtn">Load More</button>
-        </div>
+        <div id="loadMoreContainer" class="text-center">
+  <button id="loadMoreBtn" class="btn">Load More</button>
+</div>
       </section>
       <!-- About Section -->
-      <section id="about">
+    <section id="about" class="full-screen_about" style="display: none;">
         <div class="content">
-          <h2>About Me</h2>
-          <p>Here you can provide information about yourself, your skills, experience, and anything else you want to share with your visitors.</p>
+
+
+
+
         </div>
       </section>
       <!-- Contact Section -->
-      <section id="contact">
+    <section id="contact" class="full-screen_contact" style="display: none;">
         <div class="content">
-          <h2>Contact Me</h2>
-          <p>Feel free to get in touch with me via the form below.</p>
+
+
+
+
           <!-- Add your contact form here -->
         </div>
       </section>
@@ -638,6 +685,17 @@
       </div>
       <div class="copyright"> &copy; 2024 Your Name </div>
     </footer>
+
+
+<!-- SVG Preloader -->
+  <div id="preloader">
+    <svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="8" fill="none"/>
+      <!-- Adjust stroke width and color as needed -->
+    </svg>
+  </div>
+
+
     <!-- Plyr JS -->
     <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
     <!-- jQuery -->
@@ -664,18 +722,24 @@
       });
 
       function filterItems(filter) {
-        // Show all items initially
-        $('.item').show();
-        // Hide items based on the filter
-        if (filter === 'videos') {
-          $('.item').not('.video-item').hide();
-        } else if (filter === 'images') {
-          $('.item').not('.image-item').hide();
-        }
-        // Hide Load More button when any filter is active
-        $('#loadMoreBtn').hide();
-      }
-
+  // Show all items initially
+  $('.item').show();
+  
+  // If "All" is clicked, hide initially hidden items and show load more button
+  if (filter === 'all') {
+    $('.item.additional').hide();
+    $('#loadMoreBtn').show();
+  } else {
+    // Hide items based on the filter
+    if (filter === 'videos') {
+      $('.item').not('.video-item').hide();
+    } else if (filter === 'images') {
+      $('.item').not('.image-item').hide();
+    }
+    // Hide Load More button when any filter other than "All" is active
+    $('#loadMoreBtn').hide();
+  }
+}
       function toggleFilters() {
         $('#filterDropdown').toggle();
         $('#filterButtons').toggle(); // Toggle visibility of filter buttons
@@ -689,9 +753,44 @@
       }
     </script>
 
-<script type="text/javascript">
-    
+<script>
+    // Function to show/hide sections based on ID
+    function showSection(sectionId) {
+        // Hide all sections
+        $('section').hide();
+        // Show the selected section
+        $('#' + sectionId).show();
+    }
 </script>
+
+
+
+<script>
+    // Function to show/hide sections based on ID with fade effect
+    function showSection(sectionId) {
+        // Hide all sections with fade animation
+        $('section').fadeOut();
+        // Show the selected section with fade animation
+        $('#' + sectionId).fadeIn();
+    }
+</script>
+
+
+
+  <script>
+    // JavaScript to show/hide sections and preloader
+    $(document).ready(function() {
+      // Hide the preloader once the document is loaded
+      $('#preloader').fadeOut();
+    });
+
+    function showSection(sectionId) {
+      // Hide all sections with fade animation
+      $('section').fadeOut();
+      // Show the selected section with fade animation
+      $('#' + sectionId).fadeIn();
+    }
+  </script>
 
 
   </body>
