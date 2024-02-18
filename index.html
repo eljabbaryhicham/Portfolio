@@ -23,10 +23,38 @@
         font-style: normal;
         margin: 0;
         padding: 0;
-        min-height: 100vh;
+            min-height: 100vh;
+
         background: linear-gradient(to bottom right, #e43725, #e43725);
         /* Dark blue to light blue gradient */
       }
+
+/* CSS Styles */
+/* Your existing CSS styles */
+
+
+/* Main Section Styles */
+main {
+  margin-left: 5%; /* Adjusted to accommodate the sidebar */
+}
+
+
+    /* Main Section Styles */
+    main {
+    }
+
+    /* Header Styles */
+    header {
+      font-family: "Protest Guerrilla", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #e74c3c; /* Dark blue color */
+      color: #fff;
+      padding: 20px;
+      z-index: 9999;
+      width: 100%; /* Added */
+    }
+
 
       /* Header Styles */
       header {
@@ -72,29 +100,29 @@
       }
 
       /* Main Section Styles */
-      main {
-        min-height: 85vh;
-      }
+     
 
       .full-screen {
-        min-height: 85vh;
-        display: flex;
-        justify-content: center;
+        min-height: 100vh;
+    display: flex;
+            justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        /* Ensure position relative for absolute positioning of video */
+      }
+    
+    .full-screen_work {
+        min-height: 100vh;
+    display: inline-table;
+            justify-content: center;
+                background-color: #141527;
         align-items: center;
         flex-direction: column;
         position: relative;
         /* Ensure position relative for absolute positioning of video */
       }
 
-      .full-screen_work {
-        min-height: 85vh;
-        display: inline-table;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        /* Ensure position relative for absolute positioning of video */
-      }
 
       .background-video {
         position: absolute;
@@ -132,13 +160,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+    background-color: #08091ae3;
         /* Semi-transparent black */
         z-index: 0;
         /* Ensure the overlay is behind the content */
         pointer-events: none;
         /* Allow clicks to go through the overlay to the video */
       }
+
 
       .content {
         text-align: center;
@@ -193,7 +222,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 9999;
+                z-index: 9999;
+
       }
 
       /* Social Media Icons */
@@ -206,13 +236,13 @@
 
       /* Work Section Styles */
       #work_sec {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        color: #fff;
-        text-align: center;
-        padding: 10px 250px;
-      }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    color: #fff;
+    text-align: center;
+    padding: 2% 10%;
+}
 
       .item {
         display: flex;
@@ -277,34 +307,35 @@
       }
 
       #loadMoreContainer {
-        margin: 20px;
-        display: flex;
-        justify-content: center;
-      }
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-      #loadMoreBtn {
-        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
-        border-radius: 8px;
-        border-style: none;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 12px 16px;
-        text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-        transition: all .5s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
+#loadMoreBtn {
+  background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 16px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-      #loadMoreBtn:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-        transition-duration: .1s;
-      }
+#loadMoreBtn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
 
       /* CSS Styles */
       /* Other styles remain unchanged */
@@ -469,81 +500,142 @@
       }
 
       /* Contact Section Styles */
-      #contact {
-        height: 100%;
-      }
+     #contact {
+    height: 100%;
+    background-color: #06071c;
+    min-height: 100vh;
+}
 
       /* About Section Styles */
       #about {
-        height: 100%;
+          height: 100%;
+    background-color: #06071c;
+    min-height: 100vh;
       }
 
-      #about h2 {
-        color: #333;
-      }
+     
 
-      #about p {
-        color: #666;
-      }
 
-      body {
-        cursor: none;
-      }
+  /* Add CSS for sidebar */
+    /* Sidebar Styles */
+    /* Sidebar Styles */
 
-      .dot-cursor {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #fff;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-      }
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+      background-color: transparent;
+  color: #fff;
+  padding : 20px 0px 0px 0px;
+  z-index: 999;
+  transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+
+    #sidebar button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #sidebar button:hover {
+      background-color: #555;
+    }
+
+ 
     </style>
-    <style>
-      /* Your existing CSS styles */
-      /* Add styles for the preloader */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.8);
-        /* Semi-transparent white background */
-        z-index: 9999;
-        /* Ensure the preloader is above other elements */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
+
+
+<style>
+    /* Your existing CSS styles */
+    /* Add styles for the preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      z-index: 9999; /* Ensure the preloader is above other elements */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+.modais.iziModal {
+    background: transparent;
+    max-width: 85% !important;
+}
+iframe.iziModal-iframe {
+    height: 85vh !important;
+}
+
+
+
+
+
+  </style>
+
+
+
   </head>
   <body>
     <!-- SVG Preloader -->
-    <header>
-      <!-- Header Section -->
-      <div class="logo">Your Logo</div>
-      <nav>
+
+
+    <!-- Header Section 
+
+     <header>
+    <div class="logo">Your Logo</div>
+    <nav>
         <ul>
-          <!-- Update onclick functions to call showSection with both section ID and section name -->
-          <li>
-            <button class="btn" onclick="showSection('home', 'home')">HOME</button>
-          </li>
-          <li>
-            <button class="btn" onclick="showSection('work', 'work')">WORK</button>
-          </li>
-          <li>
-            <button class="btn" onclick="showSection('about', 'about')">ABOUT</button>
-          </li>
-          <li>
-            <button class="btn" onclick="showSection('contact', 'contact')">CONTACT</button>
-          </li>
+            <li><button class="btn" onclick="showSection('home', 'home')">HOME</button></li>
+            <li><button class="btn" onclick="showSection('work', 'work')">WORK</button></li>
+            <li><button class="btn" onclick="showSection('about', 'about')">ABOUT</button></li>
+            <li><button class="btn" onclick="showSection('contact', 'contact')">CONTACT</button></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
+
+-->
+
+
+<!-- Sidebar Section -->
+  <div id="sidebar">
+        <button onclick="toggleSidebar()">Toggle Sidebar</button>
+
+    <button onclick="showSection('home')">HOME</button>
+    <button onclick="showSection('work')">WORK</button>
+    <button onclick="showSection('about')">ABOUT</button>
+    <button onclick="showSection('contact')">CONTACT</button>
+  </div>
+
     <!-- Main Section -->
     <main>
+
+
+
+
+
+
+
       <!-- First Section (Home) -->
       <section id="home" class="full-screen">
         <!-- Video Background -->
@@ -553,13 +645,22 @@
         <!-- Video Overlay -->
         <div class="video-overlay"></div>
         <div class="content">
+           
+
           <h1>JABBARY ART</h1>
-          <button class="btn" onclick="showSection('work')">WORK</button>
+<button class="btn" onclick="showSection('work', 'work')">WORK</button>
         </div>
-        <div class="dot-cursor"></div>
+
+
+
+
       </section>
+
+
+
       <!-- Second Section (Work) -->
-      <section id="work" class="full-screen_work" style="display: none;">
+            <section id="work" class="full-screen_work" style="display: none;">
+
         <!-- Filter Button -->
         <div id="filterContainer" class="text-center">
           <!-- Added container -->
@@ -656,24 +757,32 @@
         </div>
         <!-- Load More button -->
         <div id="loadMoreContainer" class="text-center">
-          <button id="loadMoreBtn" class="btn">Load More</button>
-        </div>
+  <button id="loadMoreBtn" class="btn">Load More</button>
+</div>
       </section>
       <!-- About Section -->
-      <section id="about" class="full-screen_about" style="display: none;">
-        <div class="content"></div>
+    <section id="about" class="full-screen_about" style="display: none;">
+        <div class="content">
+
+
+
+
+        </div>
       </section>
       <!-- Contact Section -->
-      <section id="contact" class="full-screen_contact" style="display: none;">
+    <section id="contact" class="full-screen_contact" style="display: none;">
         <div class="content">
+
+
+
+
           <!-- Add your contact form here -->
         </div>
       </section>
     </main>
-    <!-- Footer Section -->
+    <!-- Footer Section 
     <footer>
       <div class="social-media">
-        <!-- Social media icons -->
         <a href="#" class="social-icon">
           <i class="fab fa-facebook"></i>
         </a>
@@ -686,13 +795,22 @@
       </div>
       <div class="copyright"> &copy; 2024 Your Name </div>
     </footer>
-    <!-- SVG Preloader -->
-    <div id="preloader">
-      <svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-        <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="8" fill="none" />
-        <!-- Adjust stroke width and color as needed -->
-      </svg>
-    </div>
+-->
+
+<!-- SVG Preloader -->
+  <div id="preloader">
+    <svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="8" fill="none"/>
+      <!-- Adjust stroke width and color as needed -->
+    </svg>
+  </div>
+
+
+
+
+
+
+
     <!-- Plyr JS -->
     <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
     <!-- jQuery -->
@@ -711,7 +829,17 @@
         $(".modais").iziModal({
           history: false,
           iframe: true,
-          fullscreen: true,
+          fullscreen: false,
+          bodyOverflow: true,
+          openFullscreen: false,
+          transitionIn: 'flipOutX',
+          transitionOutOverlay: 'flipOutX',
+          borderBottom: false,
+          arrowKeys: false,
+          navigateArrows: false,
+          appendTo: 'main',
+navigateCaption: false,
+transitionOutOverlay: 'flipOutX',
           headerColor: '#000000',
           group: 'group1',
           loop: true
@@ -719,24 +847,24 @@
       });
 
       function filterItems(filter) {
-        // Show all items initially
-        $('.item').show();
-        // If "All" is clicked, hide initially hidden items and show load more button
-        if (filter === 'all') {
-          $('.item.additional').hide();
-          $('#loadMoreBtn').show();
-        } else {
-          // Hide items based on the filter
-          if (filter === 'videos') {
-            $('.item').not('.video-item').hide();
-          } else if (filter === 'images') {
-            $('.item').not('.image-item').hide();
-          }
-          // Hide Load More button when any filter other than "All" is active
-          $('#loadMoreBtn').hide();
-        }
-      }
-
+  // Show all items initially
+  $('.item').show();
+  
+  // If "All" is clicked, hide initially hidden items and show load more button
+  if (filter === 'all') {
+    $('.item.additional').hide();
+    $('#loadMoreBtn').show();
+  } else {
+    // Hide items based on the filter
+    if (filter === 'videos') {
+      $('.item').not('.video-item').hide();
+    } else if (filter === 'images') {
+      $('.item').not('.image-item').hide();
+    }
+    // Hide Load More button when any filter other than "All" is active
+    $('#loadMoreBtn').hide();
+  }
+}
       function toggleFilters() {
         $('#filterDropdown').toggle();
         $('#filterButtons').toggle(); // Toggle visibility of filter buttons
@@ -749,28 +877,82 @@
         }
       }
     </script>
-    <script>
-      // Function to show/hide sections based on ID with fade effect
-      function showSection(sectionId, sectionName) {
+
+
+
+
+
+<script>
+    // Function to show/hide sections based on ID with fade effect
+    function showSection(sectionId, sectionName) {
         // Hide all sections with fade animation
         $('section').fadeOut();
         // Show the selected section with fade animation
         $('#' + sectionId).fadeIn();
+
         // Update URL with section name if it's not the home section
         if (sectionName !== 'home') {
-          history.pushState(null, null, '?s=' + sectionName);
+            history.pushState(null, null, '?s=' + sectionName);
         } else {
-          // If it's the home section, remove the query parameter
-          history.pushState(null, null, window.location.pathname);
+            // If it's the home section, remove the query parameter
+            history.pushState(null, null, window.location.pathname);
         }
-      }
-    </script>
-    <script>
-      // JavaScript to show/hide sections and preloader
-      $(document).ready(function() {
-        // Hide the preloader once the document is loaded
-        $('#preloader').fadeOut();
-      });
-    </script>
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // JavaScript to show/hide sections and preloader
+    $(document).ready(function() {
+      // Hide the preloader once the document is loaded
+      $('#preloader').fadeOut();
+    });
+
+    
+  </script>
+
+
+
+<script>
+  // JavaScript to show/hide sections
+  function showSection(sectionId) {
+    // Hide all sections
+    $('section').hide();
+    // Show the selected section
+    $('#' + sectionId).show();
+  }
+</script>
+
+
+
+
+<script>
+    // Function to toggle the width of the sidebar and adjust main section width
+    function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        var mainSection = document.querySelector('main');
+
+        // Check if sidebar is currently collapsed
+        if (sidebar.style.width === '15%') {
+            sidebar.style.width = '5%'; // Change width when expanding
+            mainSection.style.marginLeft = '5%'; // Adjust main section width
+        } else {
+            sidebar.style.width = '15%'; // Change width when collapsing
+            mainSection.style.marginLeft = '15%'; // Adjust main section width
+        }
+    }
+</script>
+
+
+
   </body>
 </html>
