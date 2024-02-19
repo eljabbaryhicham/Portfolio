@@ -1,244 +1,4 @@
-
-.btn-2 {
-}
-
-
-
-
-.click-btn {
-  display: flex;
-  width: $button-width;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem;
-  line-height: 35px;
-  border: 1px solid;
-  border-color: #ffffff78;
-    border-radius: 5px;
-  border-radius: $border-radius;
-  text-align: center;
-  font-size: 16px;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.35s;
-  box-sizing: border-box;
-}
-
-.buttons-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-align-items: center;
-}
-
-.updating {
-  margin: 3em;
-  text-align: center;
-}
-
-// button style
-
-
-@keyframes ani507 {
-  10% {
-    width: 0;
-    transform: rotateZ(-45deg) translate(-100%, -50%);
-  }
-  20% {
-    width: 0;
-    transform: rotateZ(0) translate(-100%, 85%);
-  }
-  60% {
-    width: 100%;
-    transform: rotateZ(0) translate(0, 85%);
-  }
-  100% {
-    width: 100%;
-    transform: rotateZ(0) translate(0, 0);
-  }
-}
-
-
-
-.btn-style700 {
-  $btn-color: #979695;
-  $btn-hover-color: #dd6395;
-  position: relative;
-  border-color: $btn-color;
-  color: $btn-color;
-  &::before,
-  &::after {
-        background: #ffffff1a;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-color: $btn-hover-color;
-    border-radius: $border-radius;
-    border-style: solid;
-    transition: all 0.35s;
-    content: "";
-    z-index: 1;
-  }
-  &::before {
-    width: 0;
-    height: 100%;
-    border-width: 1px 0 1px 0;
-  }
-  &::after {
-    width: 100%;
-    height: 0;
-    border-width: 0 1px 0 1px;
-  }
-  &:hover {
-    border-color: $btn-hover-color;
-    color: $btn-hover-color;
-    &::before {
-      width: 100%;
-      border-width: 1px 0 1px 0;
-    }
-    &::after {
-      height: 100%;
-      border-width: 0 1px 0 1px;
-    }
-  }
-}
-
-
-.togglesidebar {
-    width: 50%;
-    background: transparent;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-
-
-
-
-button#toggleFilters  {
-    margin: 20px;
-    background: transparent;
-    padding: 10px 50px;
-}
-
-#mywork {
-    margin: 20px;
-    background: transparent;
-    padding: 10px 50px;
-    width: 50%;
-    align-self: center;
-    justify-self: center;
-}
-
-
-.sidebar_items {
-    height: 50%;
-    width: 100%;
-    display: grid;
-}
-
- #sidebar {
-    width: 30%;
-    background-color: #e74c3c;
-    color: #fff;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: width 0.5s ease;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-
-
-        #main {
-            margin-left: 30%; /* Initially set margin to the width of the sidebar */
-            transition: margin-left 0.5s ease; /* Smooth transition with ease */
-        }
-
-        @media screen and (max-width: 800px) {
-            #sidebar {
-                width: 10%; /* Adjust sidebar width to 10% when collapsed */
-            }
-            #main {
-                margin-left: 10%; /* Adjust main section margin when sidebar is collapsed */
-            }
-        }
-
-
-  /* Add styles for the preloader */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-      z-index: 9999; /* Ensure the preloader is above other elements */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-
-
-
-
-
-
-
-
-
-
-.modais.iziModal {
-    background: transparent;
-    max-width: 85% !important;
-}
-iframe.iziModal-iframe {
-    height: 85vh !important;
-}
-
-
-
-
-
-
-
-
-.copyright {
-    width: 100%;
-    text-align: center;
-}
-
-.social-media {
-    width: 100%;
-}
-
-
-
-button.btn_toggle_sidebar:hover {
-    background: #ffffff6b;
-    border: solid 1px #ffffff;
-    color: #e74b3c;
-    animation-delay: .5s;
-}
-
-
-
-
-
-
-   /* CSS Styles */
+  /* CSS Styles */
       /* Your existing CSS styles */
       /* CSS Styles */
       /* Body Styles */
@@ -443,7 +203,7 @@ button.btn_toggle_sidebar:hover {
     -webkit-user-select: none;
     touch-action: manipulation;
     padding: 20px;
-    margin: 20px 50px;
+    margin: 20px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -466,6 +226,7 @@ button.btn_toggle_sidebar:hover {
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+      width: 80%;
 } 
 
 .btn-5:hover {
@@ -719,10 +480,11 @@ margin: 20px;
       }
 
 #filterDropdown button {
-            margin: 20px;
+    margin: 20px;
     background: transparent;
     padding: 10px 50px;
-      }
+    width: 25%;
+}
 
       /* Contact Section Styles */
      #contact {
@@ -742,9 +504,273 @@ margin: 20px;
 
 
 .section-transition {
-  transition: opacity 0.5s ease-in-out;
-  top: 0;
-  left: 0;
-  width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#work {
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+ #work {
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+    /* Add styles for the preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      z-index: 9999; /* Ensure the preloader is above other elements */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+.modais.iziModal {
+    background: transparent;
+    max-width: 85% !important;
+}
+iframe.iziModal-iframe {
+    height: 85vh !important;
+}
+
+
+
+
+
+
+
+
+.copyright {
+    width: 100%;
+    text-align: center;
+}
+
+.social-media {
+    width: 100%;
+}
+
+
+
+button.btn_toggle_sidebar:hover {
+    background: #ffffff6b;
+    border: solid 1px #ffffff;
+    color: #e74b3c;
+    animation-delay: .5s;
+}
+
+
+
+  #sidebar {
+    width: 30%;
+    background-color: #e74c3c;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+        #main {
+            margin-left: 30%; /* Initially set margin to the width of the sidebar */
+            transition: margin-left 0.5s ease; /* Smooth transition with ease */
+        }
+
+        @media screen and (max-width: 800px) {
+            #sidebar {
+                width: 10%; /* Adjust sidebar width to 10% when collapsed */
+            }
+            #main {
+                margin-left: 10%; /* Adjust main section margin when sidebar is collapsed */
+            }
+        }
+
+
+
+
+
+
+
+.btn-2 {
+}
+
+
+
+
+.click-btn {
+  display: flex;
+  width: $button-width;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  line-height: 35px;
+  border: 1px solid;
+  border-color: #ffffff78;
+    border-radius: 5px;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.35s;
+  box-sizing: border-box;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+align-items: center;
+}
+
+.updating {
+  margin: 3em;
+  text-align: center;
+}
+
+// button style
+
+
+@keyframes ani507 {
+  10% {
+    width: 0;
+    transform: rotateZ(-45deg) translate(-100%, -50%);
+  }
+  20% {
+    width: 0;
+    transform: rotateZ(0) translate(-100%, 85%);
+  }
+  60% {
+    width: 100%;
+    transform: rotateZ(0) translate(0, 85%);
+  }
+  100% {
+    width: 100%;
+    transform: rotateZ(0) translate(0, 0);
+  }
+}
+
+
+
+.btn-style700 {
+  $btn-color: #979695;
+  $btn-hover-color: #dd6395;
+  position: relative;
+  border-color: $btn-color;
+  color: $btn-color;
+  &::before,
+  &::after {
+        background: #ffffff1a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: $btn-hover-color;
+    border-radius: $border-radius;
+    border-style: solid;
+    transition: all 0.35s;
+    content: "";
+    z-index: 1;
+  }
+  &::before {
+    width: 0;
+    height: 100%;
+    border-width: 1px 0 1px 0;
+  }
+  &::after {
+    width: 100%;
+    height: 0;
+    border-width: 0 1px 0 1px;
+  }
+  &:hover {
+    border-color: $btn-hover-color;
+    color: $btn-hover-color;
+    &::before {
+      width: 100%;
+      border-width: 1px 0 1px 0;
+    }
+    &::after {
+      height: 100%;
+      border-width: 0 1px 0 1px;
+    }
+  }
+}
+
+
+.togglesidebar {
+    width: 50%;
+    background: transparent;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+
+
+
+button#toggleFilters {
+    margin: 50px 0px auto;
+    background: transparent;
+    padding: 10px 50px;
+}
+
+#mywork {
+    margin: 20px;
+    background: transparent;
+    padding: 10px 50px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.sidebar_items {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
