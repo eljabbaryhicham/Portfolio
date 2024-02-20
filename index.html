@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5d89756ebf.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <style>
       /* CSS Styles */
       /* Your existing CSS styles */
@@ -25,18 +27,13 @@
         padding: 0;
             min-height: 100vh;
 
-        background: linear-gradient(to bottom right, #e43725, #e43725);
-        /* Dark blue to light blue gradient */
-      }
+    background: #06071c;
+          }
 
 /* CSS Styles */
 /* Your existing CSS styles */
 
 
-/* Main Section Styles */
-main {
-  margin-left: 5%; /* Adjusted to accommodate the sidebar */
-}
 
 
     /* Main Section Styles */
@@ -114,6 +111,7 @@ main {
     
     .full-screen_work {
         min-height: 100vh;
+            min-width: 100%;
     display: inline-table;
             justify-content: center;
                 background-color: #141527;
@@ -137,6 +135,7 @@ main {
 
       .content {
         text-align: center;
+        display: grid;
       }
 
       /* CSS Styles */
@@ -175,23 +174,103 @@ main {
         z-index: 1;
       }
 
+.btn_toggle_sidebar {
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #ffffff1f;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-color: #ffffff78;
+    border-radius: 5px;
+    width: 30%;
+    align-self: center;
+    border: solid 1px #ffffff63;
+}
+
+
+  .btn_sidebar {
+    border-radius: 8px;
+    text-transform: uppercase;
+    background: #e24333;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    padding: 20px;
+    margin: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+.btn_sidebar.btn-5 {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+      width: 80%;
+} 
+
+.btn-5:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388; 
+}
+
+
+
       /* Button Styles */
       .btn {
-        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
         /* Dark red to dark blue gradient */
         border-radius: 8px;
         border-style: none;
         box-sizing: border-box;
         color: #FFFFFF;
         cursor: pointer;
-        font-family: Arial, sans-serif;
+  font-family: "PT Sans", sans-serif;
         /* Change font for consistency */
         font-size: 16px;
         font-weight: 500;
         height: 4rem;
         padding: 0 1.6rem;
         text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
         transition: all .5s;
         user-select: none;
         -webkit-user-select: none;
@@ -201,30 +280,26 @@ main {
       }
 
       .btn:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
         transition-duration: .1s;
       }
 
       /* Footer Styles */
       footer {
-        font-family: "Fredoka", sans-serif;
-        font-optical-sizing: auto;
-        font-weight:
-          <weight>;
-        font-style: normal;
-        font-variation-settings:
-          "wdth"100;
-        background-color: #06071c;
-        /* Dark blue color */
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-                z-index: 9999;
-
-      }
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings: "wdth"100;
+    background-color: #06071c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    justify-content: center;
+    flex-direction: row;
+}
 
       /* Social Media Icons */
       .social-media a {
@@ -235,26 +310,28 @@ main {
       }
 
       /* Work Section Styles */
-      #work_sec {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    color: #fff;
-    text-align: center;
-    padding: 2% 10%;
+#work_sec {
+  display: flex; /* Change from grid to flex */
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Align items to the start of the main axis (left) */
+  align-items: center; /* Align items to the start of the cross axis (top) */
+
+  color: #fff;
+  text-align: center;
+  padding: 20px 30px;
 }
 
-      .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        /* Ensure content doesn't overflow */
-      }
+
+.work-container { 
+   }
+.item {
+    position: relative;
+    width: 45%;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
 
       .item video,
       .item img {
@@ -313,28 +390,11 @@ main {
 }
 
 #loadMoreBtn {
-  background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 12px 16px;
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-  transition: all .5s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+margin: 20px;
+    background: transparent;
+    padding: 10px 50px;
+  }
 
-#loadMoreBtn:hover {
-  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-  transition-duration: .1s;
-}
 
 
       /* CSS Styles */
@@ -351,28 +411,11 @@ main {
         z-index: 1;
       }
 
-      #filterDropdown button {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
+     
 
-      #filterDropdown button:hover {
-        background-color: #f1f1f1;
-      }
+      
 
-      #toggleFilters {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 16px;
-        border: none;
-        cursor: pointer;
-      }
-
-      #toggleFilters:hover {
-        background-color: #45a049;
-      }
+     
 
       button#toggleFilters {
         margin: 20px;
@@ -406,32 +449,7 @@ main {
       }
 
       /* Apply button styles to filter menu buttons */
-      #toggleFilters,
-      #filterDropdown button {
-        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
-        border-radius: 8px;
-        border-style: none;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 12px 16px;
-        text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-        transition: all .5s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
-
-      /* Hover effect for filter menu buttons */
-      #toggleFilters:hover,
-      #filterDropdown button:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-        transition-duration: .1s;
-      }
+      
 
       /* CSS Styles */
       /* Other styles remain unchanged */
@@ -473,31 +491,12 @@ main {
         justify-content: center;
       }
 
-      #filterDropdown button {
-        margin: 0 10px;
-        /* Adjust margin for spacing */
-        background-image: linear-gradient(92.88deg, #230a1e 9.16%, #06071c 64.72%);
-        border-radius: 8px;
-        border-style: none;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 12px 16px;
-        text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-        transition: all .5s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
-
-      #filterDropdown button:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-        transition-duration: .1s;
-      }
+#filterDropdown button {
+    margin: 20px;
+    background: transparent;
+    padding: 10px 50px;
+    width: 25%;
+}
 
       /* Contact Section Styles */
      #contact {
@@ -513,48 +512,38 @@ main {
     min-height: 100vh;
       }
 
-     
 
 
-  /* Add CSS for sidebar */
-    /* Sidebar Styles */
-    /* Sidebar Styles */
 
+.section-transition {
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#work {
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-      background-color: transparent;
-  color: #fff;
-  padding : 20px 0px 0px 0px;
-  z-index: 999;
-  transition: width 0.3s ease; /* Add transition for smooth animation */
+ #work {
+    transition: opacity 0.5s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
-    #sidebar button {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      background-color: transparent;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    #sidebar button:hover {
-      background-color: #555;
-    }
-
- 
-    </style>
-
-
-<style>
-    /* Your existing CSS styles */
     /* Add styles for the preloader */
     #preloader {
       position: fixed;
@@ -591,7 +580,223 @@ iframe.iziModal-iframe {
 
 
 
-  </style>
+
+
+
+.copyright {
+    width: 100%;
+    text-align: center;
+}
+
+.social-media {
+    width: 100%;
+}
+
+
+
+button.btn_toggle_sidebar:hover {
+    background: #ffffff6b;
+    border: solid 1px #ffffff;
+    color: #e74b3c;
+    animation-delay: .5s;
+}
+
+
+
+  #sidebar {
+    width: 30%;
+    background-color: #e74c3c;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(20 20 21 / 70%);
+}
+
+
+
+
+        #main {
+            margin-left: 30%; /* Initially set margin to the width of the sidebar */
+            transition: margin-left 0.5s ease; /* Smooth transition with ease */
+        }
+
+       
+        }
+
+
+
+
+
+
+
+.btn-2 {
+}
+
+
+
+
+.click-btn {
+  display: flex;
+  width: $button-width;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  line-height: 35px;
+  border: 1px solid;
+  border-color: #ffffff78;
+    border-radius: 5px;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.35s;
+  box-sizing: border-box;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+align-items: center;
+}
+
+.updating {
+  margin: 3em;
+  text-align: center;
+}
+
+// button style
+
+
+@keyframes ani507 {
+  10% {
+    width: 0;
+    transform: rotateZ(-45deg) translate(-100%, -50%);
+  }
+  20% {
+    width: 0;
+    transform: rotateZ(0) translate(-100%, 85%);
+  }
+  60% {
+    width: 100%;
+    transform: rotateZ(0) translate(0, 85%);
+  }
+  100% {
+    width: 100%;
+    transform: rotateZ(0) translate(0, 0);
+  }
+}
+
+
+
+.btn-style700 {
+  $btn-color: #979695;
+  $btn-hover-color: #dd6395;
+  position: relative;
+  border-color: $btn-color;
+  color: $btn-color;
+  &::before,
+  &::after {
+        background: #ffffff1a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: $btn-hover-color;
+    border-radius: $border-radius;
+    border-style: solid;
+    transition: all 0.35s;
+    content: "";
+    z-index: 1;
+  }
+  &::before {
+    width: 0;
+    height: 100%;
+    border-width: 1px 0 1px 0;
+  }
+  &::after {
+    width: 100%;
+    height: 0;
+    border-width: 0 1px 0 1px;
+  }
+  &:hover {
+    border-color: $btn-hover-color;
+    color: $btn-hover-color;
+    &::before {
+      width: 100%;
+      border-width: 1px 0 1px 0;
+    }
+    &::after {
+      height: 100%;
+      border-width: 0 1px 0 1px;
+    }
+  }
+}
+
+
+.togglesidebar {
+    width: 50%;
+    background: transparent;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        margin-top: 20%;
+}
+#togglesidebarbtn {
+        background: #be221361;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+
+
+
+button#toggleFilters {
+    margin: 50px 0px auto;
+    background: transparent;
+    padding: 10px 50px;
+}
+
+#mywork {
+    margin: 20px;
+    background: transparent;
+    padding: 10px 50px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.sidebar_items {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
+.line {
+    border: 0.1px solid #ffffff42;
+    width: 40%;
+    margin-top: 20px;
+}
+
+</style>
+
 
 
 
@@ -612,23 +817,46 @@ iframe.iziModal-iframe {
             <li><button class="btn" onclick="showSection('contact', 'contact')">CONTACT</button></li>
         </ul>
     </nav>
+
+
 </header>
 
 -->
 
 
 <!-- Sidebar Section -->
-  <div id="sidebar">
-        <button onclick="toggleSidebar()">Toggle Sidebar</button>
+<div id="sidebar">
+    <button id='togglesidebarbtn' class="click-btn btn-style700 togglesidebar" onclick="toggleSidebar()"><a><i class="fa-solid fa-bars"></i> <span>Toggle Sidebar</span></a></button>
 
-    <button onclick="showSection('home')">HOME</button>
-    <button onclick="showSection('work')">WORK</button>
-    <button onclick="showSection('about')">ABOUT</button>
-    <button onclick="showSection('contact')">CONTACT</button>
-  </div>
+<div class="sidebar_items">
+    <!-- Navigation Buttons -->
+    <button class="btn_sidebar btn-5" data-section="home" onclick="showSection('home')"><a><i class="fa-solid fa-house"></i><span>HOME</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('work')" data-section="work"><a><i class="fa-solid fa-pen"></i><span>WORK</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('about')"><a><i class="fa-solid fa-address-card"></i><span>ABOUT</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('contact')"><a><i class="fa-solid fa-address-book"></i><span>CONTACT</span></a></button>
+
+</div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-media">
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="copyright"> &copy; 2024 JABBARY ART </div>
+    </footer>
+</div>
+
 
     <!-- Main Section -->
-    <main>
+    <main id="main">
 
 
 
@@ -637,7 +865,7 @@ iframe.iziModal-iframe {
 
 
       <!-- First Section (Home) -->
-      <section id="home" class="full-screen">
+      <section id="home" class="full-screen section-transition">
         <!-- Video Background -->
         <video autoplay muted loop class="background-video">
           <source src="https://carbon-media.accelerator.net/0000000m1Yc/3xCmYpbBtGYejYRY02UIfq;video.mp4" type="video/mp4"> Your browser does not support the video tag.
@@ -648,7 +876,7 @@ iframe.iziModal-iframe {
            
 
           <h1>JABBARY ART</h1>
-<button class="btn" onclick="showSection('work', 'work')">WORK</button>
+<button id='mywork' class="click-btn btn-style700" onclick="showSection('work', 'work')">WORK</button>
         </div>
 
 
@@ -659,22 +887,30 @@ iframe.iziModal-iframe {
 
 
       <!-- Second Section (Work) -->
-            <section id="work" class="full-screen_work" style="display: none;">
+            <section id="work" class="full-screen_work section-transition" style="display: none;">
 
         <!-- Filter Button -->
         <div id="filterContainer" class="text-center">
           <!-- Added container -->
-          <div id="filterMenu">
-            <button id="toggleFilters" onclick="toggleFilters()">Filter <i class="fas fa-caret-down"></i>
+          <div id="filterMenu" class="box bg-1">
+                <div class="buttons-wrapper">
+
+            <button id="toggleFilters" class="click-btn btn-style700" onclick="toggleFilters()"><div id="spin"></div><a>Filter</a> <i class="fas fa-caret-down"></i>
             </button>
-            <div id="filterDropdown" style="display: none;">
-              <!-- Added dropdown container -->
-              <button onclick="filterItems('all')">All</button>
-              <button onclick="filterItems('videos')">Videos</button>
-              <button onclick="filterItems('images')">Images</button>
-            </div>
           </div>
+            <div id="filterDropdown" class="buttons-wrapper" style="display: none;">
+
+              <!-- Added dropdown container -->
+              <button class="click-btn btn-style700" onclick="filterItems('all')">All</button>
+              <button class="click-btn btn-style700" onclick="filterItems('videos')">Videos</button>
+              <button class="click-btn btn-style700" onclick="filterItems('images')">Images</button>
+            </div>
+            
+          </div>
+
         </div>
+                  <div class="line"></div>
+
         <div id="work_sec" class="work-container">
           <!-- Items -->
           <!-- Your existing items here -->
@@ -723,7 +959,7 @@ iframe.iziModal-iframe {
               <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
             </a>
           </div>
-          <div class="item">
+          <div class="item additional" style="display: none;">
             <a href="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" class="trigger" data-izimodal-iframeurl="http://izimodal.marcelodolza.com">
               <img class="thumbnail" src="https://www.linearity.io/blog/content/images/2023/06/motion-graphics-NewBlogCover.png" alt="Thumbnail Image">
             </a>
@@ -757,11 +993,11 @@ iframe.iziModal-iframe {
         </div>
         <!-- Load More button -->
         <div id="loadMoreContainer" class="text-center">
-  <button id="loadMoreBtn" class="btn">Load More</button>
+  <button id="loadMoreBtn" class="click-btn btn-style700" >Load More</button>
 </div>
       </section>
       <!-- About Section -->
-    <section id="about" class="full-screen_about" style="display: none;">
+    <section id="about" class="full-screen_about section-transition" style="display: none;">
         <div class="content">
 
 
@@ -770,7 +1006,7 @@ iframe.iziModal-iframe {
         </div>
       </section>
       <!-- Contact Section -->
-    <section id="contact" class="full-screen_contact" style="display: none;">
+    <section id="contact" class="full-screen_contact section-transition" style="display: none;">
         <div class="content">
 
 
@@ -817,140 +1053,139 @@ iframe.iziModal-iframe {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- iziModal JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        // Initialize Plyr player
-        const players = Array.from(document.querySelectorAll('#work video')).map(player => new Plyr(player));
-        // Load More button functionality
-        $('#loadMoreBtn').on('click', function() {
-          $('.item.additional').slideDown();
-          $(this).hide();
-        });
-        $(".modais").iziModal({
-          history: false,
-          iframe: true,
-          fullscreen: false,
-          bodyOverflow: true,
-          openFullscreen: false,
-          transitionIn: 'flipOutX',
-          transitionOutOverlay: 'flipOutX',
-          borderBottom: false,
-          arrowKeys: false,
-          navigateArrows: false,
-          appendTo: 'main',
-navigateCaption: false,
-transitionOutOverlay: 'flipOutX',
-          headerColor: '#000000',
-          group: 'group1',
-          loop: true
-        });
-      });
+   <script>
+  $(document).ready(function() {
+    // Initialize Plyr player
+    const players = Array.from(document.querySelectorAll('#work video')).map(player => new Plyr(player));
 
-      function filterItems(filter) {
-  // Show all items initially
-  $('.item').show();
-  
-  // If "All" is clicked, hide initially hidden items and show load more button
-  if (filter === 'all') {
-    $('.item.additional').hide();
-    $('#loadMoreBtn').show();
-  } else {
-    // Hide items based on the filter
-    if (filter === 'videos') {
-      $('.item').not('.video-item').hide();
-    } else if (filter === 'images') {
-      $('.item').not('.image-item').hide();
-    }
-    // Hide Load More button when any filter other than "All" is active
-    $('#loadMoreBtn').hide();
-  }
-}
-      function toggleFilters() {
-        $('#filterDropdown').toggle();
-        $('#filterButtons').toggle(); // Toggle visibility of filter buttons
-      }
-      // Close the dropdown menu when clicking outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('#toggleFilters')) {
-          $('#filterDropdown').hide();
-          $('#filterButtons').hide(); // Hide filter buttons when clicking outside the dropdown
-        }
-      }
-    </script>
-
-
-
-
-
-<script>
-    // Function to show/hide sections based on ID with fade effect
-    function showSection(sectionId, sectionName) {
-        // Hide all sections with fade animation
-        $('section').fadeOut();
-        // Show the selected section with fade animation
-        $('#' + sectionId).fadeIn();
-
-        // Update URL with section name if it's not the home section
-        if (sectionName !== 'home') {
-            history.pushState(null, null, '?s=' + sectionName);
-        } else {
-            // If it's the home section, remove the query parameter
-            history.pushState(null, null, window.location.pathname);
-        }
-    }
-
-</script>
-
-
-
-
-
-
-
-
-
-
-  <script>
-    // JavaScript to show/hide sections and preloader
-    $(document).ready(function() {
-      // Hide the preloader once the document is loaded
-      $('#preloader').fadeOut();
+    // Load More button functionality
+    $('#loadMoreBtn').on('click', function() {
+      $('.item.additional').slideDown();
+      $(this).hide();
     });
 
+    $(".modais").iziModal({
+      history: false,
+      iframe: true,
+      fullscreen: false,
+      bodyOverflow: true,
+      openFullscreen: false,
+      transitionIn: 'flipOutX',
+      transitionOutOverlay: 'flipOutX',
+      borderBottom: false,
+      arrowKeys: false,
+      navigateArrows: false,
+      appendTo: 'main',
+      navigateCaption: false,
+      transitionOutOverlay: 'flipOutX',
+      headerColor: '#000000',
+      group: 'group1',
+      loop: true
+    });
+  });
+
+  function filterItems(filter) {
+    // Show all items initially
+    $('.item').show();
+  
+    // If "All" is clicked, hide initially hidden items and show load more button
+    if (filter === 'all') {
+      $('.item.additional').hide();
+      $('#loadMoreBtn').show();
+    } else {
+      // Hide items based on the filter
+      if (filter === 'videos') {
+        $('.item').not('.video-item').hide();
+      } else if (filter === 'images') {
+        $('.item').not('.image-item').hide();
+      }
+      // Hide Load More button when any filter other than "All" is active
+      $('#loadMoreBtn').hide();
+    }
+  }
+
+  function toggleFilters() {
+    $('#filterDropdown').toggle();
+    $('#filterButtons').toggle(); // Toggle visibility of filter buttons
+  }
+
+  // Close the dropdown menu when clicking outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('#toggleFilters')) {
+      $('#filterDropdown').hide();
+      $('#filterButtons').hide(); // Hide filter buttons when clicking outside the dropdown
+    }
+  }
+
+  // Function to show/hide sections based on ID with fade effect and update URL
+  function showSection(sectionId, sectionName) {
+    // Hide all sections with fade animation
+    $('section').fadeOut();
     
-  </script>
+    // Show the selected section with fade animation
+    $('#' + sectionId).fadeIn();
 
+    // Update URL with section name if it's not the home section
+    if (sectionName !== 'home') {
+      window.history.pushState(null, null, '?' + sectionName);
+    } else {
+      // If it's the home section, remove the query parameter
+      window.history.pushState(null, null, window.location.pathname);
+    }
+  }
 
+  $(document).ready(function() {
+    // Hide the preloader once the document is loaded
+    $('#preloader').fadeOut();
+  });
 
-<script>
-  // JavaScript to show/hide sections
+  function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var main = document.getElementById('main');
+    var toggleSidebarBtn = document.getElementById('togglesidebarbtn');
+    var sidebarItems = document.querySelectorAll('.sidebar_items button');
+
+    if (sidebar.style.width === '30%' || sidebar.style.width === '') {
+      sidebar.style.width = '10%';
+      main.style.marginLeft = '10%';
+      // Hide text inside all sidebar buttons and the "Toggle Sidebar" button
+      toggleSidebarBtn.querySelector('span').style.display = 'none';
+      sidebarItems.forEach(function(item) {
+        var textElement = item.querySelector('span');
+        if (textElement) {
+          textElement.style.display = 'none';
+        }
+      });
+    } else {
+      sidebar.style.width = '30%';
+      main.style.marginLeft = '30%';
+      // Show text inside all sidebar buttons and the "Toggle Sidebar" button
+      toggleSidebarBtn.querySelector('span').style.display = 'inline';
+      sidebarItems.forEach(function(item) {
+        var textElement = item.querySelector('span');
+        if (textElement) {
+          textElement.style.display = 'inline';
+        }
+      });
+    }
+  }
+
+  // JavaScript to handle section visibility
   function showSection(sectionId) {
-    // Hide all sections
-    $('section').hide();
-    // Show the selected section
-    $('#' + sectionId).show();
+    $('.section-transition').css('opacity', '0');
+    setTimeout(function() {
+      $('.section-transition').hide();
+      $('#' + sectionId).css('opacity', '1').show();
+    }, 500); // Adjust timing to match CSS transition duration
   }
 </script>
 
 
 
 
-<script>
-    // Function to toggle the width of the sidebar and adjust main section width
-    function toggleSidebar() {
-        var sidebar = document.getElementById('sidebar');
-        var mainSection = document.querySelector('main');
 
-        // Check if sidebar is currently collapsed
-        if (sidebar.style.width === '15%') {
-            sidebar.style.width = '5%'; // Change width when expanding
-            mainSection.style.marginLeft = '5%'; // Adjust main section width
-        } else {
-            sidebar.style.width = '15%'; // Change width when collapsing
-            mainSection.style.marginLeft = '15%'; // Adjust main section width
-        }
-    }
-</script>
+
+
 
 
 
