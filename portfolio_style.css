@@ -1,4 +1,4 @@
-  /* CSS Styles */
+    /* CSS Styles */
       /* Your existing CSS styles */
       /* CSS Styles */
       /* Body Styles */
@@ -268,24 +268,24 @@
 
       /* Footer Styles */
       footer {
-        font-family: "Fredoka", sans-serif;
-        font-optical-sizing: auto;
-        font-weight:
-          <weight>;
-        font-style: normal;
-        font-variation-settings:
-          "wdth"100;
-        background-color: #06071c;
-        /* Dark blue color */
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-                z-index: 9999;
-
-      }
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings: "wdth"100;
+    background-color: #06071c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex !important;
+    flex-direction: initial;
+        align-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 9999;
+    justify-content: center;
+    width: 100%;
+}
 
       /* Social Media Icons */
       .social-media a {
@@ -311,15 +311,13 @@
 .work-container { 
    }
 .item {
-          position: relative;
-   width: 400px;
+    position: relative;
+    width: 45%;
     margin: 10px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-        overflow: hidden;
-        /* Ensure content doesn't overflow */
-        
-      }
+    background-color: rgb(231 75 60);
+    border-radius: 2px;
+    overflow: hidden;
+}
 
       .item video,
       .item img {
@@ -557,7 +555,7 @@ margin: 20px;
 
 
 .modais.iziModal {
-    background: transparent;
+    background: #e74c3c;
     max-width: 85% !important;
 }
 iframe.iziModal-iframe {
@@ -572,12 +570,19 @@ iframe.iziModal-iframe {
 
 
 .copyright {
-    width: 100%;
+    min-width: 200px;
     text-align: center;
+    width: 50%;
+    align-self: center;
+    margin: 10px 0px 10px 0px;
 }
 
 .social-media {
-    width: 100%;
+    min-width: 200px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    margin: 10px 0px 10px 0px;
 }
 
 
@@ -605,6 +610,7 @@ button.btn_toggle_sidebar:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(20 20 21 / 70%);
 }
 
 
@@ -615,13 +621,7 @@ button.btn_toggle_sidebar:hover {
             transition: margin-left 0.5s ease; /* Smooth transition with ease */
         }
 
-        @media screen and (max-width: 800px) {
-            #sidebar {
-                width: 10%; /* Adjust sidebar width to 10% when collapsed */
-            }
-            #main {
-                margin-left: 10%; /* Adjust main section margin when sidebar is collapsed */
-            }
+       
         }
 
 
@@ -743,6 +743,11 @@ align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
+        margin-top: 20%;
+}
+#togglesidebarbtn {
+    background: #be221361;
+    padding: 40px;
 }
 
 
@@ -773,4 +778,23 @@ button#toggleFilters {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+
+
+
+.line {
+    border: 0.1px solid #ffffff42;
+    width: 40%;
+    margin-top: 20px;
+}
+
+span {
+    right: -20%;
+    position: relative;
+}
+
+i {
+    margin: 0px 5px;
+        font-size: 25px;
 }
