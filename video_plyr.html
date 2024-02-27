@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+
+<meta charset='utf-8'/>
+
+<title>Beup</title>
+
+<meta content='My Page Description' name='description'/>
+
+
+<link href='https://cdn.plyr.io/3.7.8/plyr.css' rel='stylesheet'/>
+<script src='https://cdn.plyr.io/3.7.8/plyr.js'></script>
+ 
+ <!-- plyr mod   --> 
+
+<link href='https://cdn.jsdelivr.net/gh/eljabbaryhicham/Plyr-CSS@main/beup_styles.css' rel='stylesheet'/>
+
+
+
+
+
+ <!-- plyr m3u8 support  --> 
+
+
+<script src='//cdn.jsdelivr.net/npm/hls.js@1'></script>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+ 
+
+
+
+
+
+
+  
+  
+
+</head>
+<body>
+
+
+
+
+
+
+
+	      <div allow='autoplay' class='vid'>
+            
+            
+            
+         <!-- Youtube             
+              
+ <div data-plyr-embed-id='dEmHyqMlclA' data-plyr-provider='youtube' id='player'>   
+      </div>
+
+
+
+ --> 
+            
+            
+            
+             <!-- Youtube         
+   
+
+            
+            
+<div class='plyr__video-embed' id='player'>
+<iframe allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share allowfullscreen' frameborder='0' src='https://www.youtube.com/embed/dEmHyqMlclA?si=duBxVSHhUZ7Mb4ew'/>
+            </div>
+           
+            
+                --> 
+
+
+
+
+                   <!-- Html5 plyr   --> 
+
+
+        
+
+
+   <video allow='autoplay' autoplay='true' id='player' poster='https://1.bp.blogspot.com/-vYG6xhtQtU0/XVOD1NB9o7I/AAAAAAAACZk/rb9g1ozkW9sU4IdaE0JDU0cTW3V-frt8QCLcBGAs/s1600/logo-beup-colored.png'>
+    
+    <source size='576' src='https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4'/>
+
+
+  </video> 
+
+            
+            
+            
+            
+            
+            
+            
+            
+                <!-- M3u8 plyr  --> 
+
+
+<script>
+ 
+  // const source = 'http://ugeen.live:8080/Ugeen_byo7RC/fNAhqa/3221';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('video');
+
+    const supported = Plyr.supported('video', 'html5', true);
+
+    // Plyr player options
+    const player = new Plyr(video, {
+
+      captions: { active: true, update: true },
+      controls: [
+        'play-large', // The large play button in the center
+        'rewind', // Rewind by the seek time (default 10 seconds)
+        'play', // Play/pause playback
+        'fast-forward', // Fast forward by the seek time (default 10 seconds)
+        'progress', // The progress bar and scrubber for playback and buffering
+        'current-time', // The current time of playback
+        'duration', // The full duration of the media
+        'mute', // Toggle mute
+        'volume', // Volume control
+        'settings', // Settings menu
+        'pip', // Picture-in-picture (currently Safari only)
+        'airplay', // Airplay (currently Safari only)
+        'fullscreen', // Toggle fullscreen
+        'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+      ],
+quality: {
+          default: 720,
+          options: [1080, 720, 480, 360],
+          forced: true,
+          onChange: quality => console.log('Quality changed to', quality)
+        },
+      debug: true, // Enable debug mode
+      restart: true, // Disable restart control
+      autoplay: true, // Autoplay the media
+settings: ['captions', 'quality', 'speed', 'loop']
+    });
+
+
+    if (!Hls.isSupported()) {
+      video.src = source;
+    } else {
+      const hls = new Hls();
+      hls.loadSource(source);
+      hls.attachMedia(video);
+      window.hls = hls;
+
+      // Handle changing captions
+      player.on('languagechange', () => {
+        setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+      });
+    }
+
+    window.player = player;
+
+    player.source = {
+      type: 'video',
+      title: 'Beup',
+      sources: data,
+    };
+
+    player.on('qualitychange', event => {
+      $.each(data, function () {
+        initData();
+      })
+    });
+
+    function initData() {
+      const video = document.querySelector('video');
+      $.each(data, function () {
+        if (this.mode === 'hls' && this.size === player.config.quality.selected) {
+          if (!Hls.isSupported()) {
+            video.src = this.src;
+          } else {
+            const hls = new Hls();
+            hls.loadSource(this.src);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            player.on('languagechange', () => {
+              setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+          }
+
+          window.player = player;
+          return false;
+        }
+
+        if (this.mode === 'mpd' && this.size === player.config.quality.selected) {
+          const dash = dashjs.MediaPlayer().create();
+          dash.initialize(video, this.src, true);
+
+          window.player = player;
+          window.dash = dash;
+        }
+      })
+    }
+    initData();
+  });
+</script>
+
+
+            
+
+
+
+
+    </div> 
+
+
+
+
+
+  
+  
+
+
+  
+  
+
+  
+</body>
+</html>
