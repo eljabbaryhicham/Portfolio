@@ -14,6 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/5d89756ebf.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/open-props@1.6.20/open-props.min.css" rel="stylesheet">
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
     <style>
       /* CSS Styles */
       /* Your existing CSS styles */
@@ -195,32 +202,31 @@
     text-decoration: none;
     border-color: #ffffff78;
     border-radius: 5px;
-    width: 30%;
+    width: 20%;
     align-self: center;
     border: solid 1px #ffffff63;
 }
 
 
-  .btn_sidebar {
+.btn_sidebar {
     border-radius: 8px;
     text-transform: uppercase;
-    background: #e24333;
+    background: #e2433300;
     border-style: none;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    height: 4rem;
     padding: 0 1.6rem;
     text-align: center;
     transition: all .5s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -236,22 +242,22 @@
 
 
 .btn_sidebar.btn-5 {
-  border: 0 solid;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  outline: 1px solid;
-  outline-color: rgba(255, 255, 255, .5);
-  outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-      width: 80%;
-} 
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 0.5px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 70%;
+}
 
 .btn-5:hover {
-  border: 1px solid;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388; 
+    border: 1px solid;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+    background: #ff897f69;
 }
 
 
@@ -290,15 +296,19 @@
     font-weight: <weight>;
     font-style: normal;
     font-variation-settings: "wdth"100;
-    background-color: #06071c;
+    background-color: #141527;
     color: #fff;
     padding: 20px;
     text-align: center;
-    display: flex;
+    display: flex !important;
+    flex-direction: initial;
+    align-self: center;
     align-items: center;
+    flex-wrap: wrap;
     z-index: 9999;
     justify-content: center;
-    flex-direction: row;
+    width: 100%;
+    border-top: solid 1px;
 }
 
       /* Social Media Icons */
@@ -390,10 +400,10 @@
 }
 
 #loadMoreBtn {
-margin: 20px;
+    margin: 20px;
     background: transparent;
-    padding: 10px 50px;
-  }
+    padding: 30px 100px;
+}
 
 
 
@@ -402,8 +412,8 @@ margin: 20px;
       /* Style for the filter dropdown */
       /* Styles for the filter dropdown */
       #filterMenu {
-        position: relative;
-        display: inline-block;
+ 
+
       }
 
       #filterDropdown {
@@ -456,6 +466,7 @@ margin: 20px;
       /* Center the filter menu container */
       #filterContainer {
         text-align: center;
+            width: 70%;
       }
 
       /* Align the buttons horizontally */
@@ -496,6 +507,7 @@ margin: 20px;
     background: transparent;
     padding: 10px 50px;
     width: 25%;
+        cursor: pointer;
 }
 
       /* Contact Section Styles */
@@ -506,11 +518,15 @@ margin: 20px;
 }
 
       /* About Section Styles */
-      #about {
-          height: 100%;
+
+#about {
+    height: 100%;
     background-color: #06071c;
     min-height: 100vh;
-      }
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
 
 
@@ -584,12 +600,19 @@ iframe.iziModal-iframe {
 
 
 .copyright {
-    width: 100%;
+    min-width: 200px;
     text-align: center;
+    width: 50%;
+    align-self: center;
+    margin: 10px 0px 10px 0px;
 }
 
 .social-media {
-    width: 100%;
+    min-width: 200px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    margin: 10px 0px 10px 0px;
 }
 
 
@@ -603,8 +626,8 @@ button.btn_toggle_sidebar:hover {
 
 
 
-  #sidebar {
-    width: 30%;
+#sidebar {
+    width: 20%;
     background-color: #e74c3c;
     color: #fff;
     height: 100vh;
@@ -617,14 +640,14 @@ button.btn_toggle_sidebar:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(20 20 21 / 70%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(20 20 21 / 70%);
 }
 
 
 
 
         #main {
-            margin-left: 30%; /* Initially set margin to the width of the sidebar */
+            margin-left: 20%; /* Initially set margin to the width of the sidebar */
             transition: margin-left 0.5s ease; /* Smooth transition with ease */
         }
 
@@ -707,7 +730,7 @@ align-items: center;
   color: $btn-color;
   &::before,
   &::after {
-        background: #ffffff1a;
+        background: #ffffff42;
     position: absolute;
     top: 0;
     left: 0;
@@ -750,22 +773,25 @@ align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
-        margin-top: 20%;
+        margin-top: 10%;
 }
 #togglesidebarbtn {
-        background: #be221361;
+    background: #be221361;
+    padding: 25px;
+        cursor: pointer;
 }
 
 
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 
 
 
 button#toggleFilters {
     margin: 50px 0px auto;
-    background: transparent;
-    padding: 10px 50px;
+    background: #2d2e48;
+    padding: 25px 50px;
+        cursor: pointer;
+            width: -webkit-fill-available;
 }
 
 #mywork {
@@ -775,8 +801,11 @@ button#toggleFilters {
     width: 50%;
     align-self: center;
     justify-self: center;
+    cursor: pointer;
+    border-bottom: solid 3px #ffffff;
+    border-radius: 5px;
+    padding: 30px 50px;
 }
-
 
 .sidebar_items {
     justify-content: center;
@@ -793,12 +822,68 @@ button#toggleFilters {
     border: 0.1px solid #ffffff42;
     width: 40%;
     margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgb(169 64 64 / 52%), 0 6px 20px 0 rgb(102 102 177 / 56%);
 }
-
 span {
-    right: -20%;
     position: relative;
 }
+
+i {
+    margin: 0px 5px;
+        font-size: 25px;
+}
+
+
+
+.noise {
+    --lines: 4px;
+    --lines: 0.0003px;
+    mask: repeating-radial-gradient( circle at center, #000, var(--lines), #000, 0, /* transition hints make code easier to manage */ #0000, calc(var(--lines) * 2), #0000 0 /* trailing 0 is part of the hard stop logic */ );
+}
+
+@property --lines {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0.00010px;
+}
+
+@keyframes liner {
+  50% {
+    --lines: 0.00012px;
+  }
+}
+.noise {
+  animation: liner var(--hour) linear infinite;
+}
+
+
+
+.rounded {
+    background: #c93b2e6e;
+    width: 70%;
+    border-radius: 50px;
+    border: solid #d73527 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid 1px #ffffff;
+    box-shadow: -1px 1px 7px 0px rgba(71,14,34,0.23);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(71,14,34,0.23);
+-moz-box-shadow: -1px 1px 7px 0px rgba(71,14,34,0.23);
+}
+
+
+button.btn_sidebar.btn-5 a {
+    padding: 10px;
+}
+
+
+.content img {
+    height: 80vh;
+}
+
+
 
 </style>
 
@@ -835,10 +920,14 @@ span {
 
 <div class="sidebar_items">
     <!-- Navigation Buttons -->
-    <button class="btn_sidebar btn-5" data-section="home" onclick="showSection('home')"><a><i class="fa-solid fa-house"></i><span>HOME</span></a></button>
-<button class="btn_sidebar btn-5" onclick="showSection('work')" data-section="work"><a><i class="fa-solid fa-pen"></i><span>WORK</span></a></button>
-<button class="btn_sidebar btn-5" onclick="showSection('about')"><a><i class="fa-solid fa-address-card"></i><span>ABOUT</span></a></button>
-<button class="btn_sidebar btn-5" onclick="showSection('contact')"><a><i class="fa-solid fa-address-book"></i><span>CONTACT</span></a></button>
+    <div class="rounded">
+      
+       <button class="btn_sidebar btn-5" data-section="home" onclick="showSection('home', 'home')"><a><i class="fa-solid fa-house"></i><span>HOME</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('work', 'work')"><a><i class="fa-solid fa-film"></i><span>WORK</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('about', 'about')"><a><i class="fa-solid fa-address-card"></i><span>ABOUT</span></a></button>
+<button class="btn_sidebar btn-5" onclick="showSection('contact', 'contact')"><a><i class="fa-solid fa-address-book"></i><span>CONTACT</span></a></button>
+
+    </div>
 
 </div>
 
@@ -880,7 +969,7 @@ span {
         <div class="content">
            
 
-          <h1>JABBARY ART</h1>
+<h1 class="noise">JABBARY ART</h1>
 <button id='mywork' class="click-btn btn-style700" onclick="showSection('work', 'work')">WORK</button>
         </div>
 
@@ -921,7 +1010,7 @@ span {
           <!-- Your existing items here -->
           <!-- Initial 9 items -->
           <div class="item video-item">
-            <div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="video_plyr.html"></div>
+            <div id="modal-1" class="modais" data-izimodal-transitionin="fadeInUp" data-izimodal-title="Vimeo" data-izimodal-iframeURL="https://bnmax4.blogspot.com/"></div>
             <a href="https://cdn.motiondesign.school/uploads/2021/06/motion-pro.jpg" class="trigger" data-izimodal-open="#modal-1">
               <img class="thumbnail" src="https://cdn.motiondesign.school/uploads/2021/06/motion-pro.jpg" alt="Thumbnail Image">
             </a>
@@ -1003,12 +1092,10 @@ span {
       </section>
       <!-- About Section -->
     <section id="about" class="full-screen_about section-transition" style="display: none;">
-        <div class="content">
-
-
-
-
-        </div>
+       <div class="content">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhscBDh3meHXX4QxMeBLTlFvGbGXGY9kOhyphenhyphenQeeVHrQALhtXD1gKRq7ACR_pMX8SlbaeUIfMBoCpLdeIN-FlmBMWzne22s2FSswA5aO8hUIvJx9-Xx_KT1ofE5X6RHrur8I3_1qQ8XsmBfOz7uKJafgkIM2sV84gdwsPl1Dfm-zqVgHeYBBzC7CFOKH4ako/s1920/image.png" alt="Description of your image">
+    <!-- Add any additional content here -->
+  </div>
       </section>
       <!-- Contact Section -->
     <section id="contact" class="full-screen_contact section-transition" style="display: none;">
@@ -1150,9 +1237,10 @@ span {
     var toggleSidebarBtn = document.getElementById('togglesidebarbtn');
     var sidebarItems = document.querySelectorAll('.sidebar_items button');
 
-    if (sidebar.style.width === '30%' || sidebar.style.width === '') {
+    if (sidebar.style.width === '20%' || sidebar.style.width === '') {
       sidebar.style.width = '10%';
       main.style.marginLeft = '10%';
+
       // Hide text inside all sidebar buttons and the "Toggle Sidebar" button
       toggleSidebarBtn.querySelector('span').style.display = 'none';
       sidebarItems.forEach(function(item) {
@@ -1162,8 +1250,8 @@ span {
         }
       });
     } else {
-      sidebar.style.width = '30%';
-      main.style.marginLeft = '30%';
+      sidebar.style.width = '20%';
+      main.style.marginLeft = '20%';
       // Show text inside all sidebar buttons and the "Toggle Sidebar" button
       toggleSidebarBtn.querySelector('span').style.display = 'inline';
       sidebarItems.forEach(function(item) {
@@ -1184,8 +1272,6 @@ span {
     }, 500); // Adjust timing to match CSS transition duration
   }
 </script>
-
-
 
 
 
